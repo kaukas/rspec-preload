@@ -14,7 +14,7 @@ And so I thought "how hard can it be" and scratched my own itch.
 
 This is a hack, for many reasons:
 
-- It peeks deep into rspec internals. Those could change at any time. Works only on RSpec 3.
+- It peeks deep into RSpec internals. Those could change at any time. Works only on RSpec 3.
 - It preloads `spec_helper.rb` and `rails_helper.rb`. Whatever files get required will never be reloaded. Gems, Rails configuration, initializers, and whatever they require will not be reloaded, and you will get no warnings. If you change those files you'll have to restart the preloader to pick the changes up. That said, most of the things in Rails are auto-loaded. Since specs are run in a subprocess, spec code and anything it depends on gets thrown away after each run, to be loaded on the next again.
 - Only FactoryBot factories get reloaded. Because that was easy.
 - [I've had crashes when forking on newer Macs and Rails](https://stackoverflow.com/q/52941426). `export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES` helped.

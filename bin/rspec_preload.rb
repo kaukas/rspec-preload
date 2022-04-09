@@ -3,21 +3,12 @@
 require 'benchmark'
 require 'rspec/core'
 
-options = RSpec::Core::ConfigurationOptions.new([])
-config = RSpec.configuration
-
-# Copied from
-# https://github.com/rspec/rspec-core/blob/v3.11.0/lib/rspec/core/runner.rb#L130.
-# It's the same in older versions, only placed in setup.
-config.error_stream = $stderr
-config.output_stream = $stdout
-options.configure(RSpec.configuration)
-
 ['spec/spec_helper.rb', 'spec/rails_helper.rb'].each do |helper|
   file = File.join(Dir.pwd, helper)
   require(file) if File.exist?(file)
 end
 
+config = RSpec.configuration
 rspec_version = Gem::Version.create(RSpec::Core::Version::STRING)
 # Run the before(:suite) hooks. Note that no after(:suite) hooks are ever run!
 if rspec_version < Gem::Version.new('3.2')
