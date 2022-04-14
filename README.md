@@ -74,3 +74,7 @@ Finished in ... seconds ()
 No guarantees. It might break, it might lie to you (it probably will!), it might brick your computer. Use at your own risk.
 
 In any case, if you use it do first understand what it does. You have been warned.
+
+## Prior Art
+
+I found [rspec-preloader](https://github.com/victormours/rspec-preloader). I should have searched earlier. It is neat; it tracks file changes and reloads them. But it does not load `rails_helper.rb` nor run `before(:suite)` hooks. Alternatives FTW!
