@@ -3,8 +3,10 @@
 require 'benchmark'
 require 'rspec/core'
 
-['spec/spec_helper.rb', 'spec/rails_helper.rb'].each do |helper|
-  file = File.join(Dir.pwd, helper)
+spec_folder = File.join(Dir.pwd, 'spec')
+$LOAD_PATH << spec_folder unless $LOAD_PATH.include?(spec_folder)
+%w[spec_helper.rb rails_helper.rb].each do |helper|
+  file = File.join(spec_folder, helper)
   require(file) if File.exist?(file)
 end
 
