@@ -4,6 +4,8 @@ rspec-preload is a short script that does the easy 70% of tools like spring and 
 
 ## Why?
 
+[Read the related blog entry.](https://kaukas.mataroa.blog/blog/rspec-preloader/)
+
 I've tried spring before. For some reason it sometimes failed to pick up file changes, and at other times consumed 100% CPU, even when sleeping. For all I know, [these problems could be solved by now](https://github.com/rails/spring/issues/636) but were serious enough back then.
 
 In addition, I worked on projects that performed slow DB cleanup tasks on startup. Even spring could not help with those (could it?).
