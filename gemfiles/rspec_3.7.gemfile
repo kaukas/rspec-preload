@@ -2,6 +2,6 @@
 
 source "https://rubygems.org"
 
-gem "appraisal", "~> 2.4.1"
+gem "appraisal", "~> 2.5.0"
 gem "rspec", "3.7.0"
-gem "factory_bot", "6.2.1"
+gem "factory_bot", "6.5.1"

@@ -7,13 +7,8 @@ RSpec.configure do |config|
   config.order = 'random'
 end
 
-rspec_version = Gem::Version.create(RSpec::Core::Version::STRING)
 begin
-  if rspec_version >= Gem::Version.new('3.1')
-    require 'factory_bot'
-  else
-    require 'factory_girl'
-  end
+  require 'factory_bot'
 rescue LoadError
   nil
 end

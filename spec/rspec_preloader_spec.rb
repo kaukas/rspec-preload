@@ -13,7 +13,7 @@ describe 'RspecPreloader' do
             &block)
   end
 
-  0.upto(11).map { |v| "rspec-3.#{v}" }.each do |appraisal|
+  1.upto(13).map { |v| "rspec-3.#{v}" }.each do |appraisal|
     context appraisal do
       it 'runs specs' do
         preload(appraisal) do |stdin, stdout, wait_thr|
